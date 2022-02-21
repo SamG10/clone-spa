@@ -31,6 +31,7 @@ class Users
             ':email' => $email
         ]);
         return $request->fetch(PDO::FETCH_ASSOC);
+
+
     }
 }
-?>
