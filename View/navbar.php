@@ -10,10 +10,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Controller/NavigationController.php?users">Adopter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../Controller/NavigationController.php?friends">Profil</a>
+                    <a class="nav-link" href="../Controller/NavigationController.php?adopt">Adopter</a>
                 </li>
             </ul>
                 <div>
@@ -23,7 +20,7 @@
                     <?php endif; ?>
                     <?php if (isset($_SESSION['user'])) : ?>
                         <?php if($_SESSION['user']['role'] === "admin") : ?>
-                            <button>admin</button>
+                            <a class="btn btn-warning" href="../Controller/NavigationController.php?admin">administrateur</a>
                         <?php endif; ?>
                         <a class="btn btn-danger" href="../Controller/UserController.php?disconnect">Se Déconnecter</a>
                     <?php endif; ?>
