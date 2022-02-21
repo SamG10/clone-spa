@@ -22,6 +22,9 @@
                         <a class="btn btn-success" href="../Controller/NavigationController.php?register">S'inscrire</a>
                     <?php endif; ?>
                     <?php if (isset($_SESSION['user'])) : ?>
+                        <?php if($_SESSION['user']['role'] === "admin") : ?>
+                            <button>admin</button>
+                        <?php endif; ?>
                         <a class="btn btn-danger" href="../Controller/UserController.php?disconnect">Se Déconnecter</a>
                     <?php endif; ?>
                 </div>

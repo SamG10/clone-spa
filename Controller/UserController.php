@@ -20,6 +20,7 @@ if(isset($_GET['register'])){
         $_SESSION['user']['id']= $user['id_us'];
         $_SESSION['user']['nom']= $user['prenom']." ".$user['nom'];
         $_SESSION['user']['email'] = $user['email'];
+        $_SESSION['user']['role'] = $user['role'];
         echo json_encode($_SESSION);
     }
 }else if(isset($_GET['disconnect'])){
