@@ -24,16 +24,7 @@ if(isset($_GET['register'])){
         echo json_encode($_SESSION);
     }
 }else if(isset($_GET['admin'])){
-    $animaux = $userClass->addAnimals($dataAnimals);
-    if($user){
-        $_SESSION['animaux']['id']= $animaux['id_an'];
-        $_SESSION['animaux']['nom']= $animaux['nom'];
-        $_SESSION['animaux']['date_naissance']= $animaux['date_naissance'];
-        $_SESSION['animaux']['genre'] = $animaux['genre'];
-        $_SESSION['animaux']['lieu'] = $animaux['lieu'];
-        $_SESSION['animaux']['is_adopt'] = $animaux['is_adopt'];
-        echo json_encode($_SESSION);
-    }
+    
 }else if(isset($_GET['disconnect'])){
 // Réinitialisation du tableau de session
 // On le vide intégralement
