@@ -27,7 +27,17 @@ if(isset($_GET['register'])){
     echo json_encode($data);
 }else if(isset($_GET['adopt'])){
     $users = $userClass->getAllAnimals($_SESSION['user']['id']);
-    echo json_encode($users);
+        echo json_encode($users);
+}else if(isset($_GET['edit']) && isset($_GET['id'])){
+    $users = $userClass->profilAnimal($_GET['id']);
+    include_once "../View/editAnimals.php";
+}else if(isset($_GET['edit']) && isset($_GET['id'])){
+    $users = $userClass->editAnimal($_GET['id'], $data);
+    include_once "../View/editAnimals.php";
+    echo json_encode($data);
+}else if(isset($_GET['profil']) && isset($_GET['id'])){
+    $users = $userClass->profilAnimal($_GET['id']);
+    include_once "../View/profil.php";
 }else if(isset($_GET['disconnect'])){
 // Réinitialisation du tableau de session
 // On le vide intégralement

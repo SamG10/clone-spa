@@ -21,7 +21,7 @@
                           '<h5 class="card-title text-center">'+nom +'</h5>'+
                           '<img src='+photo+' class="w-100">'+
                             '<div class="d-flex justify-content-around mt-3">'+
-                            '<a href="../Controller/NavigationController.php?detail&id='+id_an+'" class="btn btn-primary">Voir les détails</a>'+
+                            '<a href="../Controller/UserController.php?profil&id='+id_an+'" class="btn btn-primary">Voir les détails</a>'+
                             '</div>'+
                           '</div>'+
                         '</div>';

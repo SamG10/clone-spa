@@ -12,4 +12,6 @@ if(isset($_GET['register'])){
     include_once "../View/adopt.php";
 }else if(isset($_GET['detail'])){
     include_once "../View/detailAnimals.php";
+}else if(isset($_GET['edit'])){
+    include_once "../View/editAnimals.php";
 }

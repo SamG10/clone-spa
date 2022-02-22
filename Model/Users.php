@@ -52,4 +52,26 @@ class Users
         $request->execute();
         return $request->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function editAnimal($id, $data)
+    {
+        $request = $this->bdd->prepare("UPDATE animaux set nom = :nom, date_naissance = :date_naissance, genre = :genre, photo = :photo, lieu = :lieu, is_adopt = :is_adopt WHERE id_an = :id");
+        $request->execute([
+            ":id" => $id,
+            ":nom" => $data['nom'],
+            ":date_naissance" => $data['date_naissance'],
+            ":genre" => $data['genre'],
+            ":photo" => $data['photo'],
+            ":lieu" => $data['lieu'],
+            ":is_adopt" => $data['is_adopt']
+        ]);
+        // return $request->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function profilAnimal($id)
+    {
+        $request = $this->bdd->prepare("SELECT * FROM animaux WHERE id_an = :id");
+        $request->execute([":id" => $id]);
+        return $request->fetch(PDO::FETCH_ASSOC);
+    }
 }

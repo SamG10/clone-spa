@@ -27,15 +27,15 @@
                           
                             '<div class="d-flex justify-content-around mt-3">'+
                             <?php if($_SESSION['user']['role'] === "admin") : ?>
-                            '<a class="btn btn-warning w-100" href="../Controller/NavigationController.php?detail&id='+id_an+'"><i class="fa-solid fa-pen-to-square"></i></a>'+
+                            '<a class="btn btn-warning w-100" href="../Controller/UserController.php?edit&id=<?= $users['id_an'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>'+
                             <?php endif; ?>
                             <?php if($_SESSION['user']['role'] === "user") : ?>
-                            '<a class="btn btn-primary" href="../Controller/NavigationController.php?detail&id='+id_an+'">Adopter</a>'+
+                            '<a class="btn btn-primary" href="../Controller/NavigationController.php?profil&id='+id_an+'">Adopter</a>'+
                             <?php endif; ?>
                             '</div>'+
                           '</div>'+
                         '</div>';
             document.querySelector("#animaux").insertAdjacentHTML("beforeend",card);
         };
-    </script>
+</script>
 <?php require_once "foot.php" ?>
