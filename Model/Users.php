@@ -48,7 +48,7 @@ class Users
 
     public function getAllAnimals($data)
     {
-        $request = $this->bdd->prepare("SELECT * FROM animaux");
+        $request = $this->bdd->prepare("SELECT * FROM animaux ORDER BY id_an DESC");
         $request->execute();
         return $request->fetchAll(PDO::FETCH_ASSOC);
     }

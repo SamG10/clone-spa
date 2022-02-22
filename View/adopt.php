@@ -1,7 +1,4 @@
-<?php if (!isset($_SESSION['user'])) {
-    die(header("location:../404.php"));
-}
-require_once "head.php" ?>
+<?php require_once "head.php" ?>
 
 <h1 class="text-center">Adopter un animal</h1>
 <div id="animaux" class="d-flex justify-content-around flex-wrap">
@@ -14,20 +11,17 @@ require_once "head.php" ?>
             }
         }).then((data) => {
             data.forEach(d => {
-                createCard(d.id_an, d.nom, d.date_naissance, d.genre, d.photo, d.lieu, d.is_adopt);
+                createCard(d.id_an, d.nom, d.photo);
             })
         })
 
-        function createCard(id_an,nom,date_naissance,genre,photo,lieu,is_adopt){
+        function createCard(id_an,nom,photo){
             let card = '<div class="card mt-3" style="width: 20rem;">'+
                           '<div class="card-body">'+
+                          '<h5 class="card-title text-center">'+nom +'</h5>'+
                           '<img src='+photo+' class="w-100">'+
-                            '<h5 class="card-title text-center">'+nom +'</h5>'+
-                            '<p class="card-title text-center">'+date_naissance+'</p>'+
-                            '<p class="card-title text-center">'+genre +'</p>'+
-                            '<p class="card-title text-center">'+lieu +'</p>'+
                             '<div class="d-flex justify-content-around mt-3">'+
-                            '<a href="../Controller/NavigationController.php?adopt&id='+id_an+'" class="btn btn-primary">Adopter</a>'+
+                            '<a href="../Controller/NavigationController.php?detail&id='+id_an+'" class="btn btn-primary">Voir les détails</a>'+
                             '</div>'+
                           '</div>'+
                         '</div>';
