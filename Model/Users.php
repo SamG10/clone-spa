@@ -45,4 +45,11 @@ class Users
         ]);
         // return $request->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getAllAnimals($data)
+    {
+        $request = $this->bdd->prepare("SELECT * FROM animaux");
+        $request->execute();
+        return $request->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -25,6 +25,9 @@ if(isset($_GET['register'])){
 }else if(isset($_GET['admin'])){
     $userClass->addAnimals($data);
     echo json_encode($data);
+}else if(isset($_GET['adopt'])){
+    $users = $userClass->getAllAnimals($_SESSION['user']['id']);
+    echo json_encode($users);
 }else if(isset($_GET['disconnect'])){
 // Réinitialisation du tableau de session
 // On le vide intégralement

@@ -18,6 +18,8 @@
     <select name="is_adopt" id="is_adopt" class="form-control">
         <option value="0">0</option>
     </select>
+    <label for="photo">Photo de l'animal (mettre l'url):</label>
+    <input type="text" name="photo" id="photo" class="form-control">
     <button class="btn btn-primary mt-3">Valider</button>
 </form>
 <script>
