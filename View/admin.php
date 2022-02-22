@@ -2,11 +2,11 @@
 
 <h1 class="text-center">Ajouter un animal</h1>
 
-<form method="post" class="container col-6 mt-5">
+<form action="../Controller/UserController.php?admin" method="post" class="container col-6 mt-5">
     <label for="nom">Nom :</label>
     <input type="text" name="nom" id="nom" class="form-control">
-    <label for="birthdate">Date de naissance :</label>
-    <input type="date" name="birthdate" id="birthdate" class="form-control">
+    <label for="date_naissance">Date de naissance :</label>
+    <input type="date" name="date_naissance" id="date_naissance" class="form-control">
     <label for="genre">Genre :</label>
     <select name="genre" id="genre" class="form-control">
         <option value="male">Male</option>

@@ -8,4 +8,6 @@ if(isset($_GET['register'])){
     include_once "../View/login.php";
 }else if(isset($_GET['admin'])){
     include_once "../View/admin.php";
+}else if(isset($_GET['adopt'])){
+    include_once "../View/adopt.php";
 }

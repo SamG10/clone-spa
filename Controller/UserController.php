@@ -10,7 +10,6 @@ $data = json_decode($content, true);
 
 if(isset($_GET['register'])){
     $userClass->insertUser($data);
-
     echo json_encode($data);
 }else if(isset($_GET['login'])){
     $user = $userClass->verifyUser($data);
@@ -24,7 +23,8 @@ if(isset($_GET['register'])){
         echo json_encode($_SESSION);
     }
 }else if(isset($_GET['admin'])){
-    
+    $userClass->addAnimals($data);
+    echo json_encode($data);
 }else if(isset($_GET['disconnect'])){
 // Réinitialisation du tableau de session
 // On le vide intégralement

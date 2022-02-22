@@ -33,15 +33,16 @@ class Users
         return $request->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function addAnimals($dataAnimals){
-        $request = $this->bdd->prepare("INSERT INTO animaux(nom, date_naissance, genre, lieu, is_adopt) VALUES (:nom, :birthdate, :genre, :lieu, :is_adopt");
+    public function addAnimals($data){
+        $request = $this->bdd->prepare("INSERT INTO animaux(nom, date_naissance, genre, photo, lieu, is_adopt) VALUES (:nom, :date_naissance, :genre, :photo, :lieu, :is_adopt)");
         $request->execute([
-            ':nom' => $dataAnimals['nom'],
-            ':birthdate' => $dataAnimals['date_naissance'],
-            ':genre' => $dataAnimals['genre'],
-            ':lieu' => $dataAnimals['lieu'],
-            ':is_adopt' => $dataAnimals['is_adopt'],
+            ':nom' => $data['nom'],
+            ':date_naissance' => $data['date_naissance'],
+            ':genre' => $data['genre'],
+            ':photo' => $data['photo'],
+            ':lieu' => $data['lieu'],
+            ':is_adopt' => $data['is_adopt']
         ]);
-        return $request->fetch(PDO::FETCH_ASSOC);
+        // return $request->fetch(PDO::FETCH_ASSOC);
     }
 }

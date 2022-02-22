@@ -1,11 +1,11 @@
 <?php require_once "head.php" ?>
 <h1 class="text-center"> Connectez-vous! </h1>
-<form method="post">
+<form method="post" class="container col-6 mt-5">
     <label for="email">Email :</label>
     <input type="email" name="email" id="email" class="form-control">
     <label for="password">Mot de Passe :</label>
     <input type="password" name="password" id="password" class="form-control">
-    <button class="btn btn-primary">Valider</button>
+    <button class="btn btn-primary mt-3">Valider</button>
 </form>
 <script>
     let form = document.querySelector("form");
