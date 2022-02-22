@@ -53,3 +53,5 @@ CREATE TABLE animaux(
 ```
 
 ![](https://i.imgur.com/Gf8MIDE.png)
+![](https://i.imgur.com/yKvjtZP.png)
+
